@@ -1,15 +1,16 @@
 {
   "name": "data-report",
-  "version": "1.2.9",
+  "version": "0.1.0",
   "description": "",
-  "main": "st.js",
+  "main": "catch.js",
   "scripts": {
+    "dev": "webpack-dev-server --inline --hot --quiet --port 8003",
     "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --progress --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.oschina.net:allpyrn/data-report.git"
+    "url": "git@github.com:fzred/catchjs.git"
   },
   "author": "",
   "license": "ISC",
