@@ -5,13 +5,22 @@ const packager = require('./package.json')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/catch.js'),
+  entry: path.resolve(__dirname, './src/catch.ts'),
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: isProd ? `catch.${packager.version}.js` : 'catch.js',
   },
   module: {
     loaders: [
+      {
+        test: /\.ts/,
+        loader: 'ts-loader',
+        options: {
+          compilerOptions: {
+            target: 'es2015'
+          }
+        }
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -44,7 +53,7 @@ module.exports = {
     ]
   },
   plugins: [],
-  devtool: "cheap-eval-source-map",
+//  devtool: "cheap-eval-source-map",
 }
 
 //if (isProd) {
