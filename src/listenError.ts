@@ -1,4 +1,8 @@
-// 监听
+/**
+ * 监听错误
+ */
+
+// 监听回调列表
 const listenList = []
 function callError(msg) {
   listenList.forEach(fn => {
