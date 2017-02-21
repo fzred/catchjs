@@ -44,6 +44,7 @@ module.exports = {
     ]
   },
   plugins: [],
+  devtool: "cheap-eval-source-map",
 }
 
 //if (isProd) {
