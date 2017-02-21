@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const packager = require('./package.json')
 
 const isProd = process.env.NODE_ENV === 'production'
-let compilerOptions = {}
+let compilerOptions = {
+  target: 'es2015',
+}
 if (isProd) {
-  compilerOptions = {
-    target: 'es2015'
-  }
+  compilerOptions = {}
 }
 module.exports = {
   entry: path.resolve(__dirname, './src/catch.ts'),
@@ -16,7 +16,7 @@ module.exports = {
     filename: isProd ? `catch.${packager.version}.js` : 'catch.js',
   },
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.js']
   },
   module: {
     loaders: [
