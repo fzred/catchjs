@@ -1,6 +1,5 @@
-import { listenErro } from './listenError'
-listenErro()
-const a = () => {
-  console.log(3)
-}
-a()
+import { addListenError } from './listenError'
+
+addListenError((e) => {
+  console.debug(e)
+})
